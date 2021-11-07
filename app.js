@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const session = require("express-session");
 const passport = require("passport");
+require("./auth.js");
 
 app.use(
   cors({
