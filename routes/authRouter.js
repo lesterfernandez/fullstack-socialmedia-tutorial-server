@@ -2,10 +2,6 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 
-router.get("/", (_, res) => {
-  res.send("hi auth");
-});
-
 router.get(
   "/google",
   passport.authenticate("google", {
@@ -16,8 +12,8 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", { session: true }),
-  (req, res) => {
-    res.send(req.user);
+  (_, res) => {
+    res.redirect(`${process.env.CLIENT_URL}`);
   }
 );
 
