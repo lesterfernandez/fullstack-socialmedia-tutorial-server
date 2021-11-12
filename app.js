@@ -6,6 +6,8 @@ const session = require("express-session");
 const passport = require("passport");
 require("./auth.js");
 
+app.use(express.json());
+
 app.use(
   cors({
     credentials: true,
